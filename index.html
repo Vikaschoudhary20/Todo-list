@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+   
     <title>Todo list</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,900&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/6ef467b45e.js" crossorigin="anonymous"></script>
-
     <style>
       body{
     margin: 0;
@@ -56,7 +55,7 @@
 
 
 
-ul {
+.taskshower ul{
     
     color: #ffffff;
     background-color:rgb(151, 119, 119);
@@ -69,14 +68,21 @@ ul {
   
 }
 
-.fa-solid,.fa-trash{
+.taskshower ul i{
     
-    margin-left: 10px;
+    
     position: absolute;
-       cursor: pointer;
+    right: 10px;
+    
+    cursor: pointer;
        
 }
 
+
+.taskshower ul button{
+    position: absolute;
+    right: 35px;
+}
 
 
     </style>
@@ -87,6 +93,7 @@ ul {
       <div class="inputs">
         <input id="inp" type="text" placeholder="Enter Your Task" />
         <button id="but" onclick="Add()">Add</button>
+        
       </div>
       <div class="taskshower">
        
