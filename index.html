@@ -122,8 +122,8 @@ function Add(){
         newEle.innerHTML = `${inp.value}<i class="fa-solid fa-trash trash"></i><i class="fa-solid fa-edit edit"></i>`;
         taskshower.appendChild(newEle);
         inp.value = "";
-        newEle.querySelector(".trash").addEventListener('click', remove);
-        newEle.querySelector(".edit").addEventListener('click', edit);
+        newEle.querySelector(".fa-trash").addEventListener('click', remove);
+        newEle.querySelector(".fa-edit").addEventListener('click', edit);
         
         function remove(){
             newEle.remove();
