@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,900&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/6ef467b45e.js" crossorigin="anonymous"></script>
     <style>
-      body{
+       body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -68,22 +68,32 @@
   
 }
 
-.taskshower ul i{
+.trash{
     
     
     position: absolute;
     right: 10px;
-    
+    bottom:  5px;
     cursor: pointer;
        
 }
+
+.edit{
+    
+    
+    position: absolute;
+    right: 50px;
+    bottom: 5px;
+    cursor: pointer;
+       
+}
+
 
 
 .taskshower ul button{
     position: absolute;
     right: 35px;
 }
-
 
     </style>
   </head>
@@ -107,16 +117,24 @@ let taskshower = document.querySelector(".taskshower");
 function Add(){
     if (inp.value =="") {
         alert("Please Enter Your Task.")
-    }
-    else{
+    } else{
         let newEle = document.createElement('ul');
-         newEle.innerHTML = `${inp.value}<i class="fa-solid fa-trash"></i>`;
-         taskshower.appendChild(newEle);
-         inp.value = "";
-         newEle.querySelector("i").addEventListener('click', remove);
-         function remove(){
-            newEle.remove()
-         }
+        newEle.innerHTML = `${inp.value}<i class="fa-solid fa-trash trash"></i><i class="fa-solid fa-edit edit"></i>`;
+        taskshower.appendChild(newEle);
+        inp.value = "";
+        newEle.querySelector(".fa-trash").addEventListener('click', remove);
+        newEle.querySelector(".fa-edit").addEventListener('click', edit);
+        
+        function remove(){
+            newEle.remove();
+        }
+
+        function edit(){
+            let newValue = prompt("Edit your task:", newEle.firstChild.textContent);
+            if (newValue) {
+                newEle.firstChild.textContent = newValue;
+            }
+        }
     }
         
 }
@@ -126,3 +144,5 @@ function Add(){
   </body>
 </html>
 
+
+    
